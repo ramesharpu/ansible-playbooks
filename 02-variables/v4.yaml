@@ -1,0 +1,12 @@
+---
+- name: variable demo - dict:dict
+  hosts: all
+  vars:
+    user:
+      { fn: Ramesh, ln: Ananda, mn: 123456789 }
+
+  tasks:
+  - name: print the user details
+    debug:
+      msg:
+        "{{ user.fn }}"

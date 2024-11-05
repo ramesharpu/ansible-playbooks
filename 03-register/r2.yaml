@@ -1,0 +1,12 @@
+---
+- name: register demo 1
+  hosts: all
+
+  tasks:
+    - name: Check the OS name
+      shell: uname
+      register: os_name
+    - name: print the OS result
+      debug:
+        msg:
+          "{{ os_name.stdout }}"

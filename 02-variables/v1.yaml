@@ -1,0 +1,12 @@
+---
+- name: variable demo - dictionary
+  hosts: all
+  vars:
+    region: west
+
+  tasks:
+  - name: print the result
+    debug:
+      msg:
+        "{{region}}"
+

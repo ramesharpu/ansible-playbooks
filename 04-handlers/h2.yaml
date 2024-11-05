@@ -1,0 +1,21 @@
+---
+- name: handlers demo with flush
+  hosts: all
+
+  tasks:
+    - name: Check the OS name
+      shell: uname
+      register: os_name
+      notify: print the result
+
+    - name: Forcefully calling the handler
+      meta: flush_handlers
+
+    - name: ping the servers
+      ping:
+
+  handlers:
+    - name: print the result
+      debug:
+        msg:
+          "{{ os_name.stdout }}"

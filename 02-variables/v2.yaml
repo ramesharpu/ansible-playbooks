@@ -1,0 +1,16 @@
+---
+- name: variable demo - dict:list
+  hosts: all
+  vars:
+    region:
+      - east
+      - west
+      - north
+      - south
+
+  tasks:
+  - name: print the result
+    debug:
+      msg:
+        "{{region[2]}}"
+
